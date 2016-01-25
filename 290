@@ -1,0 +1,43 @@
+// for leetcode 290
+import java.util.Hashtable;
+
+public class Solution {
+    public boolean wordPattern(String pattern, String str) {
+        int i = 0;
+    	Hashtable<Character, String> table1 = new Hashtable<Character, String>();
+        String strArray[] = str.split(" ");
+        
+        for (i = 0; i < strArray.length; i++){
+        	System.out.println("  str"+i+"="+strArray[i]);
+        }        
+        
+        if (pattern.length() != strArray.length){
+            return false;
+        }
+        
+        for (i = 0; i < pattern.length(); i++){
+
+        	if (table1.containsKey(pattern.charAt(i))){
+        		//check
+        		
+        		System.out.println("  come here!");
+        		
+        		System.out.println("value in table = " + table1.get(pattern.charAt(i)) + "Array = " + strArray[i]);
+        		
+        		
+        		if (!table1.get(pattern.charAt(i)).equalsIgnoreCase(strArray[i])){
+        			return false;
+        		}
+        	}
+        	else{
+        		table1.put(pattern.charAt(i), strArray[i]);
+        	}
+        }
+        
+        for (i = 0; i < pattern.length(); i++){
+        	System.out.println("  "+i+table1.get(pattern.charAt(i)));
+        }
+        
+        return true;
+    }
+}
