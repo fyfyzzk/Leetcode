@@ -1,0 +1,16 @@
+public class main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		boolean val = false;
+		
+		Solution so = new Solution();
+		
+		val = so.wordPattern("abba", "cat dog dog cat");
+		
+		System.out.println("result = " + val);
+		
+		return;
+	}
+
+}
