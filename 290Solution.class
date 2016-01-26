@@ -1,4 +1,3 @@
-// for leetcode 290
 import java.util.Hashtable;
 
 public class Solution {
@@ -16,7 +15,6 @@ public class Solution {
         }
         
         for (i = 0; i < pattern.length(); i++){
-
         	if (table1.containsKey(pattern.charAt(i))){
         		//check
         		
@@ -30,6 +28,10 @@ public class Solution {
         		}
         	}
         	else{
+        	    if (table1.containsValue(strArray[i])){
+        	        return false;
+        	    }
+        	    
         		table1.put(pattern.charAt(i), strArray[i]);
         	}
         }
@@ -41,3 +43,5 @@ public class Solution {
         return true;
     }
 }
+
+
